@@ -10,18 +10,16 @@ from collections import defaultdict
 from pprint import pprint
 
 child = sys.argv[1]
-parents = sys.argv[2]
-window_size = sys.argv[3]
-step = sys.argv[4]
-blastDB = sys.argv[5]
-parent1_name = sys.argv[6]
-parent2_name = sys.argv[7]
+window_size = sys.argv[2]
+step = sys.argv[3]
+blastDB = sys.argv[4]
+parent1_name = sys.argv[5]
+parent2_name = sys.argv[6]
 
 
 class RecAnalysis(object):
     """
     input:  rec_genome: single .fasta file with the recombinant (child) genome
-            parent_genomes: multi.fasta file containing both parent genomes
             win_size: integer (desired window size Recomended: 1000)
             step_size: integer (desired window overlap size Recomended: 100)
             parent_blastDB: local blast database from both parents
@@ -122,10 +120,11 @@ class RecAnalysis(object):
         subprocess.call(cl_call)
         hits = parse_blast(outBlast)
         outTable = open('recombinant_table.tsv', 'w')
-        print('index', 'window', 'score', file=outTable)
+        print('coord', 'window', 'score', file=outTable)
         for k, v in hits.items():
-            print(k, compute_score(v), file=outTable)
+            coord = k.split("_")[-1]
+            print(coord, k, compute_score(v), file=outTable)
 
-tester = RecAnalysis(rec_genome=child, parent_genomes=parents, win_size=1000, step_size=10, parent_blastDB=blastDB, parent1=parent1_name, parent2=parent2_name)
+tester = RecAnalysis(rec_genome=child, win_size=1000, step_size=10, parent_blastDB=blastDB, parent1=parent1_name, parent2=parent2_name)
 chunks = tester.sliding_window()
 blast = tester.blast_recombinant()
