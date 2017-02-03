@@ -1,4 +1,10 @@
 # recombination_analysis
+interpreter: #Python 3.4
+
+Locally installed requirements:
+ncbi blastn: 2.2.31+
+biopython==1.67
+
 
 Python Class for determinating recombination break points of child recombinant by comparing to parents via a sliding window blast approach
 
