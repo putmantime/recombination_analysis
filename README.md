@@ -5,8 +5,10 @@ Python Class for determinating recombination break points of child recombinant b
 
 Output: 
 Table of genome coord, window name, parent code (int)
+
+
 |coord| window| score|
-|--------------|-------------|------------|     
+| ------------- | ------------- | ------------- |  
 |1980| rec_child_test_window_2_coord_1980 |0|
 |5940| rec_child_test_window_6_coord_5940 |0|
 |2970| rec_child_test_window_3_coord_2970 |0|
@@ -14,3 +16,4 @@ Table of genome coord, window name, parent code (int)
 |4950| rec_child_test_window_5_coord_4950 |0|
 |6930| rec_child_test_window_7_coord_6930 |0|
 |9900| rec_child_test_window_10_coord_9900| 1|
+
