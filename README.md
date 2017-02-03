@@ -36,3 +36,10 @@ Table of genome coord, window name, parent code (int)
 |4950| rec_child_test_window_5_coord_4950 |0|
 |6930| rec_child_test_window_7_coord_6930 |0|
 |9900| rec_child_test_window_10_coord_9900| 1|
+
+
+score 2 indicates a higher blast score for parent 2
+score 1 indicates a higher blast score for parent 1
+score 0 indicates a tie blast score e.g. non-informative shared parent DNA
+
+This table can then be loaded into a statistical progran like R to plot the coord as the x axis and the score of the y axis
