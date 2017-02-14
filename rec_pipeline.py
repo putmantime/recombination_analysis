@@ -28,9 +28,8 @@ class RecAnalysis(object):
 
     """
 
-    def __init__(self, rec_genome, parent_genomes, win_size, step_size, parent_blastDB, parent1, parent2):
+    def __init__(self, rec_genome, win_size, step_size, parent_blastDB, parent1, parent2):
         self.parse_rec = self.parsed_sequence(rec_genome)
-        self.parent_genomes = parent_genomes
         self.win_size = win_size
         self.step_size = step_size
         self.parent_blastDB = parent_blastDB
